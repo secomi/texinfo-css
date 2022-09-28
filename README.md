@@ -17,7 +17,7 @@ makeinfo --html --css-ref=manual.css --no-split -o manual.html  manual.texi
 ```
 
 ## Quick preview
-To preview the output, uses https://htmlpreview.github.io, linke being:
+To preview the output, uses https://htmlpreview.github.io, link being:
 
 <https://htmlpreview.github.io/?https://github.com/secomi/texinfo-css/blob/main/manual-css-html/manual.html>
 
