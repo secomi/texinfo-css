@@ -1,0 +1,180 @@
+@import url('https://www.gnu.org/style.css');
+
+
+body {
+    /* Make sure the body doesn't become to wide: long lines are hard to
+       read.  */
+    max-width: 60em;
+}
+
+
+/* makeinfo 6.5 converts @quotation to <blockquote>.  Highlight them.  */
+blockquote {
+    font-style: normal;
+    border-left: solid 10px red;
+    padding-left: 2.5%;
+    margin-left: 0px;
+}
+
+blockquote p {
+    padding-right: 0.5%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+}
+
+blockquote p b {
+    margin-left: -1em;
+}
+
+blockquote p b::after {
+    content: "\a";
+    white-space: pre;
+}
+
+/* admonition notes */
+
+div.note blockquote {
+    font-style: normal;
+    border-left: solid 10px #3498db;
+    background-color: #f0f7fb;
+    padding-left: 7%;
+    margin-left: 0px;
+}
+
+div.important blockquote {
+    font-style: normal;
+    border-left: solid 10px #e74c3c;
+    background-color: #fcf7f2;
+    padding-left: 7%;
+    margin-left: 0px;
+}
+
+div.warning blockquote {
+    font-style: normal;
+    border-left: solid 10px #f1c40f;
+    background-color: #fffbea;
+    padding-left: 7%;
+    margin-left: 0px;
+}
+
+
+.warning blockquote::before,
+.important blockquote::before,
+.note blockquote::before {
+    font-size: 50px;
+    position: absolute;
+    margin-top: 30px;
+    margin-left: -60px;
+}
+
+.note blockquote::before {
+    content: "\1F5D2";        /*🗒️*/
+}
+
+.important blockquote::before {
+    content: "\2757";        /*❗*/
+}
+
+.warning blockquote::before {
+    content: "\26A0";        /*⚠️*/
+}
+
+
+/* indentedblock */
+blockquote.indentedblock {
+    border-left: none;
+}
+
+/* footnotes */
+.footnote {
+    font-size: smaller;
+    margin: 5em 0em;
+}
+
+.footnote h3 {
+    display: inline;
+    font-size: small;
+}
+
+
+/* tables */
+table {
+    border-collapse: collapse;
+    margin: 40px 0px;
+}
+
+table.index-cp *,
+table.index-fn *,
+table.index-ky *,
+table.index-pg *,
+table.index-tp *,
+table.index-vr * {
+    background-color: inherit;
+    border-style: none;
+}
+
+td,
+th {
+    border-color: silver;
+    border-style: solid;
+    border-width: thin;
+    padding: 5px;
+    border-left: none;
+    border-right: none;
+}
+
+th {
+    background-color: #FbFbFb;
+}
+
+
+
+/* Increase inter-line spacing to improve readability.  */
+p, pre, li, dt, dd, table, code, address { line-height: 1.5em; }
+
+var { font-style: italic; }
+
+
+
+div.example { padding: .8em 1.2em .4em; }
+pre.example { padding: .8em 1.2em; }
+div.example, pre.example {
+   margin: 1em 0 1em 3% ;
+   -webkit-border-radius: .3em;
+   -moz-border-radius: .3em;
+   border-radius: .3em;
+   border: 1px solid #c4c2c0;
+   background-color: #fbfbfb;
+}
+
+/* makeinfo 6.7 uses <div class="header"> for navigation links above node
+   titles.  Make those links less prominent.  */
+.header {
+    line-height: 2em;
+    font-size: 87.5%;
+    color: #433;
+}
+
+/* In title and node titles, use Fira Sans if available as it is more
+   pleasant and more compact than Helvetica.  */
+.settitle, .top, .chapter, .section, .subsection, .subsubsection {
+    font-family: Fira Sans, sans;
+}
+
+/* ----- coreutils specific styling ----- */
+
+/* layout.css indents "body p" when it should probably only indent "body > p"?
+   In any case, disable indenting of p in these sub elements.  */
+dd p,li p {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* underlined links are distracting, especially within outlined tables.  */
+a { /*add :link for external links*/
+    text-decoration: none; /* don't underline links by default */
+    outline-style: none;   /* don't put dotted box around clicked links */
+}
+a:hover {
+    text-decoration: underline;
+}

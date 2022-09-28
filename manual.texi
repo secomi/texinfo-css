@@ -1,0 +1,752 @@
+\input texinfo @c -*-texinfo-*-
+
+@c This is part of Texinfo  custom CSS with syntax highlighting 
+@c Copyright (C)  2022 Sebastien Couppey
+
+@setfilename manual.info
+@set VERSION 1.0
+@settitle Texinfo custom CSS with syntax highlighting
+@documentlanguage en
+@documentencoding UTF-8
+@afourpaper
+
+@c macro to insert the right file based on the publication. 
+@macro syntaxhighlightexample {file}
+@ifinfo
+@include \file\.texi
+@end ifinfo
+@ifhtml
+@html
+@include \file\.html
+@end html
+@end ifhtml
+@end macro
+
+@c admonition
+@macro admonition {keyword}
+@ifhtml
+@html
+<div class=\keyword\>
+@end html
+@end ifhtml
+@end macro
+
+@macro endadmonition {}
+@ifhtml
+@html
+</div>
+@end html
+@end ifhtml
+@end macro
+
+
+@copying
+Copyright @copyright{} YYYY <name>
+
+@quotation
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A
+copy of the license is included in the section entitled "GNU Free
+Documentation License".
+@end quotation
+@end copying
+
+
+
+@titlepage
+@sp 6
+@center @titlefont{Texinfo custom CSS}
+@center @titlefont{with syntax highlighting}
+@sp 4
+@center version @value{VERSION}
+@sp 5
+@center AUTHOR
+@page
+@vskip 0pt plus 1fill
+@insertcopying 
+@end titlepage
+
+
+@summarycontents
+@contents
+
+
+@ifnottex
+@node Top
+@top Application manual
+@end ifnottex
+@iftex
+@top Preface
+@end iftex
+
+Texinfo is a typesetting syntax used for producing documentation for
+software manuals. It's the official documentation format for GNU
+projects.
+
+
+This template contains sections to test CSS style as well as example of
+code with syntax highlighting applied in some examples.
+
+It is a variant from the classical GNU manual CSS style available at:
+@itemize
+@item
+@url{https://www.gnu.org/software/gnulib/manual.css}
+
+@item
+@url{https://www.gnu.org/style.css}
+@end itemize
+
+
+Please report errors and suggestions to @email{xxxxx@@email.com}
+
+@menu
+* Usage::                       how to apply a CSS style sheet
+* Elements::                    Appearance for headings, menus, chapters, images, links, etc
+
+Appendices
+
+* Code syntax highlighting::    Examples for code syntax highlighting
+* Version History::             Changelog
+
+
+Indices
+
+* GNU Free Documentation License::
+* Style Index::                 Index of the different elements styles
+* Data Type Index::             Index of the lib data type
+* Function Index::              Index of the lib Functions
+@end menu
+
+
+@node Usage
+@chapter Usage
+
+To apply the style sheet to the HTML version of your documentation,
+run the @command{makeinfo} command specifying the appropriate url to
+the style sheet using the @option{--css-ref} option.
+
+@option{--css-ref}=@var{url} adds to each output HTML file a
+@code{<link>} tag referencing a CSS at the given @var{url}.
+
+For example:
+
+@example
+$ makeinfo --html --css-ref=URL -o OUTPUT_DEST  FILE.texi
+@end example
+
+Some example values would be:
+
+@enumerate
+@item
+A URL to the style sheet in an external domain:
+
+@example
+https://mydomain/css/manual.css
+@end example
+
+
+@item
+An absolute or relative URL path to the style sheet in the same domain
+where the documentation is published.
+
+@example
+manual.css
+/manual.css
+/css/manual.css
+static/css/manual.css
+@end example
+@end enumerate
+
+
+For @var{OUTPUT_DEST}, it depends if the produced @code{HTML} will be split or not: 
+@indentedblock
+@table @b
+@item With split output:
+creates DEST as a directory and put the output files there.
+
+@item With non-split output:
+if DEST is already a directory or ends with a /, put the output file
+there. Otherwise, DEST names the output file.
+@end table
+@end indentedblock
+
+
+For example, to build the a manual run the following command:
+
+@example
+$ makeinfo --html --css-ref=manual.css --no-split -o manual.html  manual.texi
+@end example
+
+
+
+@node Elements
+@chapter Elements
+
+@section Inline Elements
+
+Inline elements look like this:
+
+@itemize
+@cindex code, inline
+@item
+@url{https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040code, @@code}: A text that is a piece of a program:  @code{printf}, @code{while}, @code{if}, @code {return}.
+
+@cindex keyboard input
+@item
+@url{https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040kbd, @@kbd}: Command for characters of input to be typed by users, eg: @kbd{@key{Ctrl}-@key{x} + @key{s}}, @kbd{@key{Ctrl}-@key{x} @key{Ctrl}-@key{f}} 
+
+@cindex key, keyboard
+@item
+@url{https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040key, @@key}: eg: @key{F1}, @key{F2}, @key{DEL}, @key{PGUP}
+
+@cindex sample text
+@item
+@url{https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040samp, @@samp}: Sample text @samp{yyyy-dd-mm}
+
+@cindex verbatim, inline
+@item
+@url{https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040verb, @@verb}: Inline verbatim: 
+@verb{`2 + 3`}
+
+@cindex variable, metasyntactic
+@item
+@url{https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040var, @@var}: variables: @var{my_struct}, @var{record}.
+
+@cindex variable, environment
+@item
+@url{https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040env, @@env}: @env{PATH}.
+
+@cindex directory name
+@cindex file name
+@item
+@url{https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040file, @@file}: @file{~/.emacs/}, @file{/home/}.
+
+@cindex command name
+@item
+@url{https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040command, @@command}: @command{ls -l}
+
+@cindex option, command
+@item
+@url{https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040option, @@option}: @command{makeinfo} @option{--css-ref}
+
+@cindex defined text
+@item
+@url{https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040dfn, @@dfn}: to introduce a term: @dfn{main}, @dfn{blacklist}, @dfn{primary}, @dfn{whitelist}
+
+@cindex abbreviation
+@item
+@url{https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040abbr, @@abbr}: @abbr{Mr., Mister}, @abbr{Mrs., Missus} or @abbr{Ms., Missus}
+
+@cindex acronym
+@item
+@url{https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040acronym, @@acronym}: @acronym{GNU, GNU's Not Unix}, @acronym{ASAP, as soon as possible }
+project.
+
+@cindex URL, unlinked
+@item
+@url{https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040indicateurl, @@indicateurl}: great for url which doesn't exist @indicateurl{https://doesnot-exist.com/}.
+
+@cindex email
+@item
+@url{https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040email,
+@@email}: @email{no-reply@@mailbox.org, no-reply@@mailbox.org}.
+
+@cindex emphasized text
+@item
+@url{https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040emph-_0040strong, @@emph}: @emph{emphasized}.
+
+@cindex strong text
+@item
+@url{https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040emph-_0040strong, @@strong}: @strong{strong}
+
+@cindex capitalized, small cap font
+@item
+@url{https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#Smallcaps, @@sc}: @sc{small caps font} 
+@end itemize
+
+
+
+@section Block Elements
+
+@cindex information messages
+@cindex author
+@cindex quotation
+@subsection @@quotation
+
+In Texinfo, the @code{@@quotation} command is used for quotations, and
+for information messages—why is that? I don't know. The former looks
+like this:
+
+@quotation
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat.
+
+@author Someone famous in Source Title
+@end quotation
+
+Information messages such as notes, tips, warnings, etc., look like
+this:
+
+@quotation Note
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat.
+@end quotation
+
+Extending the texinfo with a Macro,
+
+@example
+@b{@@macro} admonition @{keyword@}
+@b{@@ifhtml}
+@b{@@html}
+<div class=\keyword\>
+@b{@@end html}
+@b{@@end ifhtml}
+@b{@@end macro}
+
+@b{@@macro} endadmonition @{@}
+@b{@@ifhtml}
+@b{@@html}
+</div>
+@b{@@end html}
+@b{@@end ifhtml}
+@b{@@end macro}
+
+@end example
+
+
+it is possible to have standard Notes, Warning, Important admonition,
+eg:
+
+@admonition{note}
+@quotation Note
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+inceptos himenaeos. Quisque dapibus ipsum ac semper ultricies. Nunc eget
+est convallis, rhoncus ex id, sagittis dolor. Aliquam ac dignissim
+arcu. Nunc elit est, sollicitudin id enim nec, efficitur aliquam
+nibh. Maecenas aliquam tempor libero quis commodo. Morbi nisl lectus,
+fermentum in diam ut, fringilla sollicitudin ligula.
+@end quotation
+@endadmonition
+
+@admonition{warning}
+@quotation Warning
+Vestibulum mattis, nunc at venenatis pharetra
+@sp 1
+@end quotation
+@endadmonition
+
+
+@admonition{important}
+@quotation Important
+Nulla semper lobortis elit, nec gravida velit lacinia nec. Nulla
+fringilla ex ut lorem hendrerit cursus. Praesent quis imperdiet
+velit. Donec semper tortor purus, vehicula pharetra augue blandit
+a. Mauris vitae aliquam magna.
+@end quotation
+@endadmonition
+
+
+
+
+@cindex indented block
+@subsection @@indentedblock
+
+This is a normal block of content.
+
+@indentedblock
+This is an indented block of content.
+
+@url{https://en.wikipedia.org/wiki/Lorem_ipsum, Lorem ipsum} dolor sit
+amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+id est laborum.
+@end indentedblock
+
+
+@noindent
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean finibus quis elit id elementum. 
+
+
+
+@cindex code, example
+@cindex example block
+@subsection @@example
+
+@code{@@example} command is used for computer input or output.
+
+
+@example
+$ makeinfo --version
+texi2any (GNU texinfo) 6.8
+
+Copyright (C) 2021 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+@end example
+
+For highlited source code see @ref{Code syntax highlighting}
+
+
+@cindex code, verbatim
+@cindex verbatim
+@subsection @@verbatim
+
+The @code{@@verbatim} environment is for text that may contain special
+characters or commands that should not be interpreted. 
+
+
+@verbatim
+@quotation
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat.
+
+@author Someone famous in Source Title
+@end verbatim
+
+
+
+@cindex code, lisp source
+@subsection @@lisp
+
+@lisp
+;;; Hello World in lisp 
+(format t "Hello, World!")
+@end lisp
+
+
+@cindex display
+@subsection @@display
+
+Font is left unchanged, each line of input still produces a line of output.
+The output is indented. 
+
+@display
+This is an example of text written between a @@display command
+and an @@end display command.  The @@display command
+indents the text, but does not fill it.
+@end display
+
+Enough.
+
+
+@cindex formated block
+@subsection @@format
+
+Like @code{@@display}, but there is no indentation and no fixed-width font.
+
+@format
+Ħ€ǁǿ ɰṏ®ʆď
+Héllo Wórld
+Hej världen
+שלום עולם
+Привет, мир
+こんにちは世界
+🤩 🤨 🇪🇺
+@end format
+
+
+
+@cindex list, enumerated
+@cindex list, itemized
+@cindex lists
+@subsection Lists
+
+Itemized:
+
+@itemize
+@item
+Lorem ipsum dolor sit amet
+@item
+Consectetur adipiscing elit
+@item
+Integer molestie lorem at massa
+@item
+Facilisis in pretium nisl aliquet
+@item
+Nulla volutpat aliquam velit
+@end itemize
+
+
+Enumerated:
+
+@enumerate
+@item
+Lorem ipsum dolor sit amet
+@item
+Consectetur adipiscing elit
+@item
+Integer molestie lorem at massa
+@item
+Facilisis in pretium nisl aliquet
+@end enumerate
+
+
+
+@cindex tables
+@subsection Tables
+
+@multitable @columnfractions .33 .33 .33
+@headitem Command @tab Description @tab Keyboard shortcut
+@item @code{save-some-buffer}
+@tab Save buffer
+@tab @kbd{@key{Ctrl}-@key{x} + @key{s}}
+@item @code{file-save}
+@tab Save the current file.
+@tab @kbd{@key{Ctrl}-@key{x} + @key{f}}
+@item @code{kill-buffer}
+@tab Close a buffer
+@tab @kbd{@key{Ctrl}-@key{q} + @key{k}}
+@end multitable
+
+@multitable {1} {First Name} {Last Name} {xxxxxxxxxxxxxx} {xxxxxxxxxxxx}
+@headitem # @tab First Name @tab Last Name @tab Position @tab Phone
+@item @b{1}
+@tab John
+@tab Doe
+@tab CEO, Founder
+@tab +3 555 68 70
+@item @b{2}
+@tab Anna
+@tab Cabana
+@tab Designer
+@tab +3 434 65 93
+@item @b{3}
+@tab Kale
+@tab Thornton
+@tab Developer
+@tab +3 285 42 88
+@end multitable
+
+@cindex images
+@cindex images, inline
+@subsection Images
+This load the @file{.svg} image in HTML and info output opened with Emacs.
+
+@noindent
+@image{gnu,,,GNU head,svg}
+
+@noindent
+For the @file{PDF} version, the @file{.svg} file is converted to @file{.pdf} format.  
+
+@cindex figures
+@cindex media, captioned
+@subsection Captioned figures
+
+@url{https://www.gnu.org/software/texinfo/manual/texinfo/html_node/_0040float.html,
+@@float and @@end float}: the contents of the float can be anything.
+
+@float Code,code:ex1
+@example
+#include <stdio.h>
+
+int
+main ()
+@{
+   printf ("Hello, World!");
+   return 0;
+@}
+@end example
+@shortcaption{Hello World program in C.}
+@caption{A Hello World program program in C.}
+@end float
+
+
+
+
+@cindex footnotes
+@subsection Footnotes
+
+Sed cursus mauris et sapien sodales viverra auctor id tellus. Mauris a
+enim eget orci eleifend sollicitudin sed nec quam.@footnote{In
+condimentum commodo risus} Nulla posuere ipsum sed est mattis, nec
+viverra mauris venenatis. Nunc eget tempor tortor. Phasellus varius
+mauris metus, eget feugiat ligula sollicitudin ut. Praesent finibus
+pretium suscipit.
+
+
+Fusce ultricies enim ac felis imperdiet, at lacinia metus luctus. Nam
+posuere molestie dui, eget imperdiet sem vestibulum sit amet. Maecenas
+eget sagittis lacus. Sed accumsan dignissim lectus, non volutpat nisi
+pellentesque nec. Etiam euismod dui eu orci pretium convallis. In hac
+habitasse platea dictumst.@footnote{Maecenas ut porta lacus, vel congue
+ligula.} Nam pellentesque lobortis ullamcorper.
+
+
+@cindex definitions
+@subsection Definitions
+
+This is how definitions of functions, variables, macros, commands,
+user options, etc., look like.
+
+
+@deftp {Data Type} {struct record_s} record
+@code{record} struct of the application.
+
+@deftypevr {struct record_s} {char *} name
+the name of the record.
+@end deftypevr
+
+@deftypevr {struct record_s} double data[20]
+a max of 20x double containing the data of the record. 
+@end deftypevr
+@end deftp
+
+@c @deftypefnnewline on
+@deftypefun {static void} print_record @
+  (struct record_s *@var{r})
+Print all the information contained in the
+record @var{r} (a @code{struct record_s}).
+
+@deftypevar {struct record_s} *r
+Record containing the data. 
+@end deftypevar
+
+@end deftypefun 
+
+
+
+
+@node Code syntax highlighting
+@chapter Code syntax highlighting
+@section Introduction
+
+Source code is highlighted with an external program: GNU
+Source-highlight @url{https://www.gnu.org/software/src-highlite/,link}.
+
+GNU Source-highlight reads the source file and convert it to a file
+ready to be included within the documentation.
+
+@subsection Pros / Cons
+
+Pros:
+@itemize
+@item
+Better code clarity
+
+@item
+Fully automatic (with the proper @file{Makefile}.
+
+@item
+Covers a large range of language and output formats which suits Texinfo
+@end itemize
+
+@noindent
+Cons:
+@itemize
+@item
+Complexifies the @file{Makefile}
+
+@item
+Makes the documentation dependent from another external program.
+
+@item
+For a nicer representation different output formats need to be
+generated. Although there is the possibility to only produce the
+@code{texinfo} version.
+@end itemize
+
+
+@section standard code - reference
+This is how the source code would look like by default without the
+syntax being highlighted:
+
+@example
+@verbatiminclude ex_record.c
+@end example
+
+@section Highlighted syntax texinfo output
+
+@admonition{note}
+@quotation Note
+This section is printed only with the @code{HTML} and @code{info} and @code{pdf}
+version
+@sp 1
+@end quotation
+
+As seen in the Info file, there is no particular highlight in comparison
+to the original verbatim example. However by including only the
+@code{texinfo} output generated by GNU Source highlight the HTML export
+will highlight the keywords.
+
+
+@include ex_record.c.texi
+
+@ifhtml
+@section Highlighted syntax colored html
+@admonition{note}
+@quotation Note
+This section is printed only with the HTML version
+@sp 1
+@end quotation
+@endadmonition
+
+@syntaxhighlightexample{ex_record.c}
+
+@section Highlighted syntax colored html and line numbers
+@admonition{note}
+@quotation Note
+This section is printed only with the HTML version
+@sp 1
+@end quotation
+@endadmonition
+
+@syntaxhighlightexample{ex_record.c.ln}
+@end ifhtml
+
+
+@c APPENDICES
+@node Version History
+@appendix Version History
+
+@table @dfn
+@item Version x.x.x, Month date, years
+@itemize
+@item
+Change xxxx
+@end itemize
+
+@item Version 1.0.0, September 26, 2022
+@itemize
+@item
+Initial release of the style sheet for HTML documents generated with
+the @command{makeinfo} command from GNU Texinfo 6.8
+@end itemize
+@end table
+
+
+
+@node GNU Free Documentation License
+@appendix GNU Free Documentation License
+@include fdl.texi
+
+
+@node Style Index
+@unnumbered Style Index
+@printindex cp
+
+
+@node Data Type Index
+@unnumbered Data Type Index
+@printindex tp
+
+
+@node Function Index
+@unnumbered Function Index
+@printindex fn
+
+
+
+@bye
