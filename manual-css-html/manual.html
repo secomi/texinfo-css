@@ -1,0 +1,1602 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.8, https://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- Copyright (C) YYYY <name>
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A
+copy of the license is included in the section entitled "GNU Free
+Documentation License". -->
+<title>Texinfo custom CSS with syntax highlighting</title>
+
+<meta name="description" content="Texinfo custom CSS with syntax highlighting">
+<meta name="keywords" content="Texinfo custom CSS with syntax highlighting">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="#Top" rel="start" title="Top">
+<link href="#Style-Index" rel="index" title="Style Index">
+<link href="#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="#Usage" rel="next" title="Usage">
+<style type="text/css">
+<!--
+a.copiable-anchor {visibility: hidden; text-decoration: none; line-height: 0em}
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+span:hover a.copiable-anchor {visibility: visible}
+ul.no-bullet {list-style: none}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="manual.css">
+
+
+</head>
+
+<body lang="en">
+<h1 class="settitle" align="center">Texinfo custom CSS with syntax highlighting</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="top" id="Top">
+<div class="header">
+<p>
+Next: <a href="#Usage" accesskey="n" rel="next">Usage</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Style-Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Application-manual"></span><h1 class="top">Application manual</h1>
+
+<p>Texinfo is a typesetting syntax used for producing documentation for
+software manuals. It&rsquo;s the official documentation format for GNU
+projects.
+</p>
+
+<p>This template contains sections to test CSS style as well as example of
+code with syntax highlighting applied in some examples.
+</p>
+<p>It is a variant from the classical GNU manual CSS style available at:
+</p><ul>
+<li> <a href="https://www.gnu.org/software/gnulib/manual.css">https://www.gnu.org/software/gnulib/manual.css</a>
+
+</li><li> <a href="https://www.gnu.org/style.css">https://www.gnu.org/style.css</a>
+</li></ul>
+
+
+<p>Please report errors and suggestions to <a href="mailto:xxxxx@email.com">xxxxx@email.com</a>
+</p>
+
+
+<div class="Contents_element" id="SEC_Contents">
+<h2 class="contents-heading">Table of Contents</h2>
+
+<div class="contents">
+
+<ul class="no-bullet">
+  <li><a id="toc-Usage-1" href="#Usage">1 Usage</a></li>
+  <li><a id="toc-Elements-1" href="#Elements">2 Elements</a>
+  <ul class="no-bullet">
+    <li><a id="toc-Inline-Elements" href="#Inline-Elements">2.1 Inline Elements</a></li>
+    <li><a id="toc-Block-Elements" href="#Block-Elements">2.2 Block Elements</a>
+    <ul class="no-bullet">
+      <li><a id="toc-_0040quotation" href="#g_t_0040quotation">2.2.1 @quotation</a></li>
+      <li><a id="toc-_0040indentedblock" href="#g_t_0040indentedblock">2.2.2 @indentedblock</a></li>
+      <li><a id="toc-_0040example" href="#g_t_0040example">2.2.3 @example</a></li>
+      <li><a id="toc-_0040verbatim" href="#g_t_0040verbatim">2.2.4 @verbatim</a></li>
+      <li><a id="toc-_0040lisp" href="#g_t_0040lisp">2.2.5 @lisp</a></li>
+      <li><a id="toc-_0040display" href="#g_t_0040display">2.2.6 @display</a></li>
+      <li><a id="toc-_0040format" href="#g_t_0040format">2.2.7 @format</a></li>
+      <li><a id="toc-Lists" href="#Lists">2.2.8 Lists</a></li>
+      <li><a id="toc-Tables" href="#Tables">2.2.9 Tables</a></li>
+      <li><a id="toc-Images" href="#Images">2.2.10 Images</a></li>
+      <li><a id="toc-Captioned-figures" href="#Captioned-figures">2.2.11 Captioned figures</a></li>
+      <li><a id="toc-Footnotes" href="#Footnotes">2.2.12 Footnotes</a></li>
+      <li><a id="toc-Definitions" href="#Definitions">2.2.13 Definitions</a></li>
+    </ul></li>
+  </ul></li>
+  <li><a id="toc-Code-syntax-highlighting-1" href="#Code-syntax-highlighting">3 Code syntax highlighting</a>
+  <ul class="no-bullet">
+    <li><a id="toc-Introduction" href="#Introduction">3.1 Introduction</a>
+    <ul class="no-bullet">
+      <li><a id="toc-Pros-_002f-Cons" href="#Pros-_002f-Cons">3.1.1 Pros / Cons</a></li>
+    </ul></li>
+    <li><a id="toc-standard-code-_002d-reference" href="#standard-code-_002d-reference">3.2 standard code - reference</a></li>
+    <li><a id="toc-Highlighted-syntax-texinfo-output" href="#Highlighted-syntax-texinfo-output">3.3 Highlighted syntax texinfo output</a></li>
+    <li><a id="toc-Highlighted-syntax-colored-html" href="#Highlighted-syntax-colored-html">3.4 Highlighted syntax colored html</a></li>
+    <li><a id="toc-Highlighted-syntax-colored-html-and-line-numbers" href="#Highlighted-syntax-colored-html-and-line-numbers">3.5 Highlighted syntax colored html and line numbers</a></li>
+  </ul></li>
+  <li><a id="toc-Version-History-1" href="#Version-History">Appendix A Version History</a></li>
+  <li><a id="toc-GNU-Free-Documentation-License-1" href="#GNU-Free-Documentation-License">Appendix B GNU Free Documentation License</a></li>
+  <li><a id="toc-Style-Index-1" href="#Style-Index" rel="index">Style Index</a></li>
+  <li><a id="toc-Data-Type-Index-1" href="#Data-Type-Index" rel="index">Data Type Index</a></li>
+  <li><a id="toc-Function-Index-1" href="#Function-Index" rel="index">Function Index</a></li>
+</ul>
+</div>
+</div>
+<div class="Overview_element" id="SEC_Overview">
+<h2 class="shortcontents-heading">Short Table of Contents</h2>
+
+<div class="shortcontents">
+<ul class="no-bullet">
+<li><a id="stoc-Usage-1" href="#toc-Usage-1">1 Usage</a></li>
+<li><a id="stoc-Elements-1" href="#toc-Elements-1">2 Elements</a></li>
+<li><a id="stoc-Code-syntax-highlighting-1" href="#toc-Code-syntax-highlighting-1">3 Code syntax highlighting</a></li>
+<li><a id="stoc-Version-History-1" href="#toc-Version-History-1">Appendix A Version History</a></li>
+<li><a id="stoc-GNU-Free-Documentation-License-1" href="#toc-GNU-Free-Documentation-License-1">Appendix B GNU Free Documentation License</a></li>
+<li><a id="stoc-Style-Index-1" href="#toc-Style-Index-1" rel="index">Style Index</a></li>
+<li><a id="stoc-Data-Type-Index-1" href="#toc-Data-Type-Index-1" rel="index">Data Type Index</a></li>
+<li><a id="stoc-Function-Index-1" href="#toc-Function-Index-1" rel="index">Function Index</a></li>
+</ul>
+</div>
+</div>
+<hr>
+<div class="chapter" id="Usage">
+<div class="header">
+<p>
+Next: <a href="#Elements" accesskey="n" rel="next">Elements</a>, Previous: <a href="#Top" accesskey="p" rel="prev">Application manual</a>, Up: <a href="#Top" accesskey="u" rel="up">Application manual</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Style-Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Usage-1"></span><h2 class="chapter">1 Usage</h2>
+
+<p>To apply the style sheet to the HTML version of your documentation,
+run the <code>makeinfo</code> command specifying the appropriate url to
+the style sheet using the <samp>--css-ref</samp> option.
+</p>
+<p><samp>--css-ref</samp>=<var>url</var> adds to each output HTML file a
+<code>&lt;link&gt;</code> tag referencing a CSS at the given <var>url</var>.
+</p>
+<p>For example:
+</p>
+<div class="example">
+<pre class="example">$ makeinfo --html --css-ref=URL -o OUTPUT_DEST  FILE.texi
+</pre></div>
+
+<p>Some example values would be:
+</p>
+<ol>
+<li> A URL to the style sheet in an external domain:
+
+<div class="example">
+<pre class="example">https://mydomain/css/manual.css
+</pre></div>
+
+
+</li><li> An absolute or relative URL path to the style sheet in the same domain
+where the documentation is published.
+
+<div class="example">
+<pre class="example">manual.css
+/manual.css
+/css/manual.css
+static/css/manual.css
+</pre></div>
+</li></ol>
+
+
+<p>For <var>OUTPUT_DEST</var>, it depends if the produced <code>HTML</code> will be split or not: 
+</p><blockquote class="indentedblock">
+<dl compact="compact">
+<dt><span><b>With split output:</b></span></dt>
+<dd><p>creates DEST as a directory and put the output files there.
+</p>
+</dd>
+<dt><span><b>With non-split output:</b></span></dt>
+<dd><p>if DEST is already a directory or ends with a /, put the output file
+there. Otherwise, DEST names the output file.
+</p></dd>
+</dl>
+</blockquote>
+
+
+<p>For example, to build the a manual run the following command:
+</p>
+<div class="example">
+<pre class="example">$ makeinfo --html --css-ref=manual.css --no-split -o manual.html  manual.texi
+</pre></div>
+
+
+
+<hr>
+</div>
+<div class="chapter" id="Elements">
+<div class="header">
+<p>
+Next: <a href="#Code-syntax-highlighting" accesskey="n" rel="next">Code syntax highlighting</a>, Previous: <a href="#Usage" accesskey="p" rel="prev">Usage</a>, Up: <a href="#Top" accesskey="u" rel="up">Application manual</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Style-Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Elements-1"></span><h2 class="chapter">2 Elements</h2>
+
+<ul class="section-toc">
+<li><a href="#Inline-Elements" accesskey="1">Inline Elements</a></li>
+<li><a href="#Block-Elements" accesskey="2">Block Elements</a></li>
+</ul>
+<div class="section" id="Inline-Elements">
+<h3 class="section">2.1 Inline Elements</h3>
+
+<p>Inline elements look like this:
+</p>
+<ul>
+<li> <span id="index-code_002c-inline"></span>
+<a href="https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040code">@code</a>: A text that is a piece of a program:  <code>printf</code>, <code>while</code>, <code>if</code>, <code>return</code>.
+
+</li><li> <span id="index-keyboard-input"></span>
+<a href="https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040kbd">@kbd</a>: Command for characters of input to be typed by users, eg: <kbd><span class="key">Ctrl</span>-<span class="key">x</span> + <span class="key">s</span></kbd>, <kbd><span class="key">Ctrl</span>-<span class="key">x</span> <span class="key">Ctrl</span>-<span class="key">f</span></kbd> 
+
+</li><li> <span id="index-key_002c-keyboard"></span>
+<a href="https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040key">@key</a>: eg: <tt class="key">F1</tt>, <tt class="key">F2</tt>, <tt class="key">DEL</tt>, <tt class="key">PGUP</tt>
+
+</li><li> <span id="index-sample-text"></span>
+<a href="https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040samp">@samp</a>: Sample text &lsquo;<samp>yyyy-dd-mm</samp>&rsquo;
+
+</li><li> <span id="index-verbatim_002c-inline"></span>
+<a href="https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040verb">@verb</a>: Inline verbatim: 
+<tt>2 + 3</tt>
+
+</li><li> <span id="index-variable_002c-metasyntactic"></span>
+<a href="https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040var">@var</a>: variables: <var>my_struct</var>, <var>record</var>.
+
+</li><li> <span id="index-variable_002c-environment"></span>
+<a href="https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040env">@env</a>: <code>PATH</code>.
+
+</li><li> <span id="index-directory-name"></span>
+<span id="index-file-name"></span>
+<a href="https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040file">@file</a>: <samp>~/.emacs/</samp>, <samp>/home/</samp>.
+
+</li><li> <span id="index-command-name"></span>
+<a href="https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040command">@command</a>: <code>ls -l</code>
+
+</li><li> <span id="index-option_002c-command"></span>
+<a href="https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040option">@option</a>: <code>makeinfo</code> <samp>--css-ref</samp>
+
+</li><li> <span id="index-defined-text"></span>
+<a href="https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040dfn">@dfn</a>: to introduce a term: <em>main</em>, <em>blacklist</em>, <em>primary</em>, <em>whitelist</em>
+
+</li><li> <span id="index-abbreviation"></span>
+<a href="https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040abbr">@abbr</a>: <abbr title="Mister">Mr.</abbr> (Mister), <abbr title="Missus">Mrs.</abbr> (Missus) or <abbr title="Missus">Ms.</abbr> (Missus)
+
+</li><li> <span id="index-acronym"></span>
+<a href="https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040acronym">@acronym</a>: <acronym title="GNU&rsquo;s Not Unix">GNU</acronym> (GNU&rsquo;s Not Unix), <acronym title="as soon as possible">ASAP</acronym> (as soon as possible)
+project.
+
+</li><li> <span id="index-URL_002c-unlinked"></span>
+<a href="https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040indicateurl">@indicateurl</a>: great for url which doesn&rsquo;t exist &lsquo;<code>https://doesnot-exist.com/</code>&rsquo;.
+
+</li><li> <span id="index-email"></span>
+<a href="https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040email">@email</a>: <a href="mailto:no-reply@mailbox.org">no-reply@mailbox.org</a>.
+
+</li><li> <span id="index-emphasized-text"></span>
+<a href="https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040emph-_0040strong">@emph</a>: <em>emphasized</em>.
+
+</li><li> <span id="index-strong-text"></span>
+<a href="https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#g_t_0040emph-_0040strong">@strong</a>: <strong>strong</strong>
+
+</li><li> <span id="index-capitalized_002c-small-cap-font"></span>
+<a href="https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html#Smallcaps">@sc</a>: <small>SMALL CAPS FONT</small> 
+</li></ul>
+
+
+
+</div>
+<div class="section" id="Block-Elements">
+<h3 class="section">2.2 Block Elements</h3>
+
+<span id="index-information-messages"></span>
+<span id="index-author"></span>
+<span id="index-quotation"></span>
+<ul class="section-toc">
+<li><a href="#g_t_0040quotation" accesskey="1">@quotation</a></li>
+<li><a href="#g_t_0040indentedblock" accesskey="2">@indentedblock</a></li>
+<li><a href="#g_t_0040example" accesskey="3">@example</a></li>
+<li><a href="#g_t_0040verbatim" accesskey="4">@verbatim</a></li>
+<li><a href="#g_t_0040lisp" accesskey="5">@lisp</a></li>
+<li><a href="#g_t_0040display" accesskey="6">@display</a></li>
+<li><a href="#g_t_0040format" accesskey="7">@format</a></li>
+<li><a href="#Lists" accesskey="8">Lists</a></li>
+<li><a href="#Tables" accesskey="9">Tables</a></li>
+<li><a href="#Images">Images</a></li>
+<li><a href="#Captioned-figures">Captioned figures</a></li>
+<li><a href="#Footnotes">Footnotes</a></li>
+<li><a href="#Definitions">Definitions</a></li>
+</ul>
+<div class="subsection" id="g_t_0040quotation">
+<h4 class="subsection">2.2.1 @quotation</h4>
+
+<p>In Texinfo, the <code>@quotation</code> command is used for quotations, and
+for information messages—why is that? I don&rsquo;t know. The former looks
+like this:
+</p>
+<blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat.
+</p>
+</blockquote>
+<div align="center">&mdash; <em>Someone famous in Source Title</em>
+</div>
+<p>Information messages such as notes, tips, warnings, etc., look like
+this:
+</p>
+<blockquote>
+<p><b>Note:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat.
+</p></blockquote>
+
+<p>Extending the texinfo with a Macro,
+</p>
+<div class="example">
+<pre class="example"><b>@macro</b> admonition {keyword}
+<b>@ifhtml</b>
+<b>@html</b>
+&lt;div class=\keyword\&gt;
+<b>@end html</b>
+<b>@end ifhtml</b>
+<b>@end macro</b>
+
+<b>@macro</b> endadmonition {}
+<b>@ifhtml</b>
+<b>@html</b>
+&lt;/div&gt;
+<b>@end html</b>
+<b>@end ifhtml</b>
+<b>@end macro</b>
+
+</pre></div>
+
+
+<p>it is possible to have standard Notes, Warning, Important admonition,
+eg:
+</p>
+<div class=note>
+<blockquote>
+<p><b>Note:</b> Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+inceptos himenaeos. Quisque dapibus ipsum ac semper ultricies. Nunc eget
+est convallis, rhoncus ex id, sagittis dolor. Aliquam ac dignissim
+arcu. Nunc elit est, sollicitudin id enim nec, efficitur aliquam
+nibh. Maecenas aliquam tempor libero quis commodo. Morbi nisl lectus,
+fermentum in diam ut, fringilla sollicitudin ligula.
+</p></blockquote>
+</div>
+
+<div class=warning>
+<blockquote>
+<p><b>Warning:</b> Vestibulum mattis, nunc at venenatis pharetra
+</p><br>
+</blockquote>
+</div>
+
+
+<div class=important>
+<blockquote>
+<p><b>Important:</b> Nulla semper lobortis elit, nec gravida velit lacinia nec. Nulla
+fringilla ex ut lorem hendrerit cursus. Praesent quis imperdiet
+velit. Donec semper tortor purus, vehicula pharetra augue blandit
+a. Mauris vitae aliquam magna.
+</p></blockquote>
+</div>
+
+
+
+
+<span id="index-indented-block"></span>
+</div>
+<div class="subsection" id="g_t_0040indentedblock">
+<h4 class="subsection">2.2.2 @indentedblock</h4>
+
+<p>This is a normal block of content.
+</p>
+<blockquote class="indentedblock">
+<p>This is an indented block of content.
+</p>
+<p><a href="https://en.wikipedia.org/wiki/Lorem_ipsum">Lorem ipsum</a> dolor sit
+amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+id est laborum.
+</p></blockquote>
+
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean finibus quis elit id elementum. 
+</p>
+
+
+<span id="index-code_002c-example"></span>
+<span id="index-example-block"></span>
+</div>
+<div class="subsection" id="g_t_0040example">
+<h4 class="subsection">2.2.3 @example</h4>
+
+<p><code>@example</code> command is used for computer input or output.
+</p>
+
+<div class="example">
+<pre class="example">$ makeinfo --version
+texi2any (GNU texinfo) 6.8
+
+Copyright (C) 2021 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</pre></div>
+
+<p>For highlited source code see <a href="#Code-syntax-highlighting">Code syntax highlighting</a>
+</p>
+
+<span id="index-code_002c-verbatim"></span>
+<span id="index-verbatim"></span>
+</div>
+<div class="subsection" id="g_t_0040verbatim">
+<h4 class="subsection">2.2.4 @verbatim</h4>
+
+<p>The <code>@verbatim</code> environment is for text that may contain special
+characters or commands that should not be interpreted. 
+</p>
+
+<pre class="verbatim">@quotation
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat.
+
+@author Someone famous in Source Title
+</pre>
+
+
+<span id="index-code_002c-lisp-source"></span>
+</div>
+<div class="subsection" id="g_t_0040lisp">
+<h4 class="subsection">2.2.5 @lisp</h4>
+
+<div class="example lisp">
+<pre class="lisp">;;; Hello World in lisp 
+(format t &quot;Hello, World!&quot;)
+</pre></div>
+
+
+<span id="index-display"></span>
+</div>
+<div class="subsection" id="g_t_0040display">
+<h4 class="subsection">2.2.6 @display</h4>
+
+<p>Font is left unchanged, each line of input still produces a line of output.
+The output is indented. 
+</p>
+<div class="display">
+<pre class="display">This is an example of text written between a @display command
+and an @end display command.  The @display command
+indents the text, but does not fill it.
+</pre></div>
+
+<p>Enough.
+</p>
+
+<span id="index-formated-block"></span>
+</div>
+<div class="subsection" id="g_t_0040format">
+<h4 class="subsection">2.2.7 @format</h4>
+
+<p>Like <code>@display</code>, but there is no indentation and no fixed-width font.
+</p>
+<div class="format">
+<pre class="format">Ħ€ǁǿ ɰṏ®ʆď
+Héllo Wórld
+Hej världen
+שלום עולם
+Привет, мир
+こんにちは世界
+🤩 🤨 🇪🇺
+</pre></div>
+
+
+
+<span id="index-list_002c-enumerated"></span>
+<span id="index-list_002c-itemized"></span>
+<span id="index-lists"></span>
+</div>
+<div class="subsection" id="Lists">
+<h4 class="subsection">2.2.8 Lists</h4>
+
+<p>Itemized:
+</p>
+<ul>
+<li> Lorem ipsum dolor sit amet
+</li><li> Consectetur adipiscing elit
+</li><li> Integer molestie lorem at massa
+</li><li> Facilisis in pretium nisl aliquet
+</li><li> Nulla volutpat aliquam velit
+</li></ul>
+
+
+<p>Enumerated:
+</p>
+<ol>
+<li> Lorem ipsum dolor sit amet
+</li><li> Consectetur adipiscing elit
+</li><li> Integer molestie lorem at massa
+</li><li> Facilisis in pretium nisl aliquet
+</li></ol>
+
+
+
+<span id="index-tables"></span>
+</div>
+<div class="subsection" id="Tables">
+<h4 class="subsection">2.2.9 Tables</h4>
+
+<table>
+<thead><tr><th width="33%">Command</th><th width="33%">Description</th><th width="33%">Keyboard shortcut</th></tr></thead>
+<tr><td width="33%"><code>save-some-buffer</code></td><td width="33%">Save buffer</td><td width="33%"><kbd><span class="key">Ctrl</span>-<span class="key">x</span> + <span class="key">s</span></kbd></td></tr>
+<tr><td width="33%"><code>file-save</code></td><td width="33%">Save the current file.</td><td width="33%"><kbd><span class="key">Ctrl</span>-<span class="key">x</span> + <span class="key">f</span></kbd></td></tr>
+<tr><td width="33%"><code>kill-buffer</code></td><td width="33%">Close a buffer</td><td width="33%"><kbd><span class="key">Ctrl</span>-<span class="key">q</span> + <span class="key">k</span></kbd></td></tr>
+</table>
+
+<table>
+<thead><tr><th>#</th><th>First Name</th><th>Last Name</th><th>Position</th><th>Phone</th></tr></thead>
+<tr><td><b>1</b></td><td>John</td><td>Doe</td><td>CEO, Founder</td><td>+3 555 68 70</td></tr>
+<tr><td><b>2</b></td><td>Anna</td><td>Cabana</td><td>Designer</td><td>+3 434 65 93</td></tr>
+<tr><td><b>3</b></td><td>Kale</td><td>Thornton</td><td>Developer</td><td>+3 285 42 88</td></tr>
+</table>
+
+<span id="index-images"></span>
+<span id="index-images_002c-inline"></span>
+</div>
+<div class="subsection" id="Images">
+<h4 class="subsection">2.2.10 Images</h4>
+<p>This load the <samp>.svg</samp> image in HTML and info output opened with Emacs.
+</p>
+<p><img src="gnu.svg" alt="GNU head">
+</p>
+<p>For the <samp>PDF</samp> version, the <samp>.svg</samp> file is converted to <samp>.pdf</samp> format.  
+</p>
+<span id="index-figures"></span>
+<span id="index-media_002c-captioned"></span>
+</div>
+<div class="subsection" id="Captioned-figures">
+<h4 class="subsection">2.2.11 Captioned figures</h4>
+
+<p><a href="https://www.gnu.org/software/texinfo/manual/texinfo/html_node/_0040float.html">@float and @end float</a>: the contents of the float can be anything.
+</p>
+<div class="float"><span id="code_003aex1"></span>
+<div class="example">
+<pre class="example">#include &lt;stdio.h&gt;
+
+int
+main ()
+{
+   printf (&quot;Hello, World!&quot;);
+   return 0;
+}
+</pre></div>
+
+
+<div class="float-caption"><p><strong>Code 2.1: </strong>A Hello World program program in C.</p></div></div>
+
+
+
+<span id="index-footnotes"></span>
+</div>
+<div class="subsection" id="Footnotes">
+<h4 class="subsection">2.2.12 Footnotes</h4>
+
+<p>Sed cursus mauris et sapien sodales viverra auctor id tellus. Mauris a
+enim eget orci eleifend sollicitudin sed nec quam.<a id="DOCF1" href="#FOOT1"><sup>1</sup></a> Nulla posuere ipsum sed est mattis, nec
+viverra mauris venenatis. Nunc eget tempor tortor. Phasellus varius
+mauris metus, eget feugiat ligula sollicitudin ut. Praesent finibus
+pretium suscipit.
+</p>
+
+<p>Fusce ultricies enim ac felis imperdiet, at lacinia metus luctus. Nam
+posuere molestie dui, eget imperdiet sem vestibulum sit amet. Maecenas
+eget sagittis lacus. Sed accumsan dignissim lectus, non volutpat nisi
+pellentesque nec. Etiam euismod dui eu orci pretium convallis. In hac
+habitasse platea dictumst.<a id="DOCF2" href="#FOOT2"><sup>2</sup></a> Nam pellentesque lobortis ullamcorper.
+</p>
+
+<span id="index-definitions"></span>
+</div>
+<div class="subsection" id="Definitions">
+<h4 class="subsection">2.2.13 Definitions</h4>
+
+<p>This is how definitions of functions, variables, macros, commands,
+user options, etc., look like.
+</p>
+
+<dl class="def">
+<dt id="index-struct-record_005fs"><span class="category">Data Type: </span><span><strong>struct record_s</strong> <em>record</em><a href='#index-struct-record_005fs' class='copiable-anchor'> &para;</a></span></dt>
+<dd><p><code>record</code> struct of the application.
+</p>
+<dl class="def">
+<dt id="index-name"><span class="category">struct record_s: </span><span><em>char *</em> <strong>name</strong><a href='#index-name' class='copiable-anchor'> &para;</a></span></dt>
+<dd><p>the name of the record.
+</p></dd></dl>
+
+<dl class="def">
+<dt id="index-data_005b20_005d"><span class="category">struct record_s: </span><span><em>double</em> <strong>data[20]</strong><a href='#index-data_005b20_005d' class='copiable-anchor'> &para;</a></span></dt>
+<dd><p>a max of 20x double containing the data of the record. 
+</p></dd></dl>
+</dd></dl>
+
+<dl class="def">
+<dt id="index-print_005frecord"><span class="category">Function: </span><span><em>static void</em> <strong>print_record</strong> <em>(struct record_s *<var>r</var>)</em><a href='#index-print_005frecord' class='copiable-anchor'> &para;</a></span></dt>
+<dd><p>Print all the information contained in the
+record <var>r</var> (a <code>struct record_s</code>).
+</p>
+<dl class="def">
+<dt id="index-_002ar"><span class="category">Variable: </span><span><em>struct record_s</em> <strong>*r</strong><a href='#index-_002ar' class='copiable-anchor'> &para;</a></span></dt>
+<dd><p>Record containing the data. 
+</p></dd></dl>
+
+</dd></dl>
+
+
+
+
+<hr>
+</div>
+</div>
+</div>
+<div class="chapter" id="Code-syntax-highlighting">
+<div class="header">
+<p>
+Next: <a href="#Version-History" accesskey="n" rel="next">Version History</a>, Previous: <a href="#Elements" accesskey="p" rel="prev">Elements</a>, Up: <a href="#Top" accesskey="u" rel="up">Application manual</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Style-Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Code-syntax-highlighting-1"></span><h2 class="chapter">3 Code syntax highlighting</h2>
+<ul class="section-toc">
+<li><a href="#Introduction" accesskey="1">Introduction</a></li>
+<li><a href="#standard-code-_002d-reference" accesskey="2">standard code - reference</a></li>
+<li><a href="#Highlighted-syntax-texinfo-output" accesskey="3">Highlighted syntax texinfo output</a></li>
+<li><a href="#Highlighted-syntax-colored-html" accesskey="4">Highlighted syntax colored html</a></li>
+<li><a href="#Highlighted-syntax-colored-html-and-line-numbers" accesskey="5">Highlighted syntax colored html and line numbers</a></li>
+</ul>
+<div class="section" id="Introduction">
+<h3 class="section">3.1 Introduction</h3>
+
+<p>Source code is highlighted with an external program: GNU
+Source-highlight <a href="https://www.gnu.org/software/src-highlite/">link</a>.
+</p>
+<p>GNU Source-highlight reads the source file and convert it to a file
+ready to be included within the documentation.
+</p>
+<ul class="section-toc">
+<li><a href="#Pros-_002f-Cons" accesskey="1">Pros / Cons</a></li>
+</ul>
+<div class="subsection" id="Pros-_002f-Cons">
+<h4 class="subsection">3.1.1 Pros / Cons</h4>
+
+<p>Pros:
+</p><ul>
+<li> Better code clarity
+
+</li><li> Fully automatic (with the proper <samp>Makefile</samp>.
+
+</li><li> Covers a large range of language and output formats which suits Texinfo
+</li></ul>
+
+<p>Cons:
+</p><ul>
+<li> Complexifies the <samp>Makefile</samp>
+
+</li><li> Makes the documentation dependent from another external program.
+
+</li><li> For a nicer representation different output formats need to be
+generated. Although there is the possibility to only produce the
+<code>texinfo</code> version.
+</li></ul>
+
+
+</div>
+</div>
+<div class="section" id="standard-code-_002d-reference">
+<h3 class="section">3.2 standard code - reference</h3>
+<p>This is how the source code would look like by default without the
+syntax being highlighted:
+</p>
+<div class="example">
+<pre class="verbatim">#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;               /* NAN, isnan, nan */
+
+typedef struct record_s {
+    char *name;
+    double data[20];
+} record_s;
+
+static void
+print_record (record_s *r)
+{
+  printf (&quot;The name is: %s\n  &quot;, r-&gt;name);
+  for (size_t i=0; !isnan (r-&gt;data[i]); i++) printf (&quot;%g  &quot;, r-&gt;data[i]);
+  printf (&quot;\n&quot;);
+}
+
+int
+main (int argc, char *argv[])
+{
+
+  record_s r1 = (record_s){.name=&quot;Paul&quot;, .data={1, 2, 3, NAN}};
+  record_s r2 = (record_s){.name=&quot;John&quot;, .data={4.1, 5, 6, 7.2, NAN}};
+
+  print_record (&amp;r1);    /* ❶ comment 1 */
+  print_record (&amp;r2);
+
+  return 0;
+}
+</pre></div>
+
+</div>
+<div class="section" id="Highlighted-syntax-texinfo-output">
+<h3 class="section">3.3 Highlighted syntax texinfo output</h3>
+
+<div class=note>
+<blockquote>
+<p><b>Note:</b> This section is printed only with the <code>HTML</code> and <code>info</code> and <code>pdf</code>
+version
+</p><br>
+</blockquote>
+
+<p>As seen in the Info file, there is no particular highlight in comparison
+to the original verbatim example. However by including only the
+<code>texinfo</code> output generated by GNU Source highlight the HTML export
+will highlight the keywords.
+</p>
+
+<div class="example">
+<pre class="example"><b>#include</b> <tt>&lt;stdio.h&gt;</tt>
+<b>#include</b> <tt>&lt;math.h&gt;</tt>               <i>/* NAN, isnan, nan */</i>
+
+<b>typedef</b> <b>struct</b> record_s {
+    char *name;
+    double data[20];
+} record_s;
+
+<b>static</b> void
+<b>print_record</b> (record_s *r)
+{
+  <b>printf</b> (<tt>&quot;The name is: %s</tt><tt>\n</tt><tt>  &quot;</tt>, r-&gt;name);
+  <b>for</b> (size_t i=0; !<b>isnan</b> (r-&gt;data[i]); i++) <b>printf</b> (<tt>&quot;%g  &quot;</tt>, r-&gt;data[i]);
+  <b>printf</b> (<tt>&quot;</tt><tt>\n</tt><tt>&quot;</tt>);
+}
+
+int
+<b>main</b> (int argc, char *argv[])
+{
+
+  record_s r1 = (record_s){.name=<tt>&quot;Paul&quot;</tt>, .data={1, 2, 3, NAN}};
+  record_s r2 = (record_s){.name=<tt>&quot;John&quot;</tt>, .data={4.1, 5, 6, 7.2, NAN}};
+
+  <b>print_record</b> (&amp;r1);    <i>/* ❶ comment 1 */</i>
+  <b>print_record</b> (&amp;r2);
+
+  <b>return</b> 0;
+}
+
+</pre></div>
+
+</div>
+<div class="section" id="Highlighted-syntax-colored-html">
+<h3 class="section">3.4 Highlighted syntax colored html</h3>
+<div class=note>
+<blockquote>
+<p><b>Note:</b> This section is printed only with the HTML version
+</p><br>
+</blockquote>
+</div>
+
+<!-- Generator: GNU source-highlight 3.1.9
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<div class="example"><pre class="example"><span style="color:#a0132f">#include</span> <span style="color:#2544bb">&lt;stdio.h&gt;</span>
+<span style="color:#a0132f">#include</span> <span style="color:#2544bb">&lt;math.h&gt;</span>               <span style="color:#505050">/* NAN, isnan, nan */</span>
+
+<span style="color:#5317ac">typedef</span> <span style="color:#5317ac">struct</span> <span style="color:#005a5f">record_s</span> <span style="color:#000000">{</span>
+    <span style="color:#005a5f">char</span> <span style="color:#000000">*</span>name<span style="color:#000000">;</span>
+    <span style="color:#005a5f">double</span> data<span style="color:#000000">[</span><span style="color:#993399">20</span><span style="color:#000000">];</span>
+<span style="color:#000000">}</span> record_s<span style="color:#000000">;</span>
+
+<span style="color:#5317ac">static</span> <span style="color:#005a5f">void</span>
+<span style="color:#721045">print_record</span> <span style="color:#000000">(</span>record_s <span style="color:#000000">*</span>r<span style="color:#000000">)</span>
+<span style="color:#000000">{</span>
+  <span style="color:#721045">printf</span> <span style="color:#000000">(</span><span style="color:#2544bb">"The name is: %s</span><span style="color:#CC33CC">\n</span><span style="color:#2544bb">  "</span><span style="color:#000000">,</span> r<span style="color:#000000">-&gt;</span>name<span style="color:#000000">);</span>
+  <span style="color:#5317ac">for</span> <span style="color:#000000">(</span>size_t i<span style="color:#000000">=</span><span style="color:#993399">0</span><span style="color:#000000">;</span> <span style="color:#000000">!</span><span style="color:#721045">isnan</span> <span style="color:#000000">(</span>r<span style="color:#000000">-&gt;</span>data<span style="color:#000000">[</span>i<span style="color:#000000">]);</span> i<span style="color:#000000">++)</span> <span style="color:#721045">printf</span> <span style="color:#000000">(</span><span style="color:#2544bb">"%g  "</span><span style="color:#000000">,</span> r<span style="color:#000000">-&gt;</span>data<span style="color:#000000">[</span>i<span style="color:#000000">]);</span>
+  <span style="color:#721045">printf</span> <span style="color:#000000">(</span><span style="color:#2544bb">"</span><span style="color:#CC33CC">\n</span><span style="color:#2544bb">"</span><span style="color:#000000">);</span>
+<span style="color:#000000">}</span>
+
+<span style="color:#005a5f">int</span>
+<span style="color:#721045">main</span> <span style="color:#000000">(</span><span style="color:#005a5f">int</span> argc<span style="color:#000000">,</span> <span style="color:#005a5f">char</span> <span style="color:#000000">*</span>argv<span style="color:#000000">[])</span>
+<span style="color:#000000">{</span>
+
+  record_s r1 <span style="color:#000000">=</span> <span style="color:#000000">(</span>record_s<span style="color:#000000">)</span><span style="color:#000000">{</span><span style="color:#000000">.</span>name<span style="color:#000000">=</span><span style="color:#2544bb">"Paul"</span><span style="color:#000000">,</span> <span style="color:#000000">.</span>data<span style="color:#000000">=</span><span style="color:#000000">{</span><span style="color:#993399">1</span><span style="color:#000000">,</span> <span style="color:#993399">2</span><span style="color:#000000">,</span> <span style="color:#993399">3</span><span style="color:#000000">,</span> NAN<span style="color:#000000">}}</span><span style="color:#000000">;</span>
+  record_s r2 <span style="color:#000000">=</span> <span style="color:#000000">(</span>record_s<span style="color:#000000">)</span><span style="color:#000000">{</span><span style="color:#000000">.</span>name<span style="color:#000000">=</span><span style="color:#2544bb">"John"</span><span style="color:#000000">,</span> <span style="color:#000000">.</span>data<span style="color:#000000">=</span><span style="color:#000000">{</span><span style="color:#993399">4.1</span><span style="color:#000000">,</span> <span style="color:#993399">5</span><span style="color:#000000">,</span> <span style="color:#993399">6</span><span style="color:#000000">,</span> <span style="color:#993399">7.2</span><span style="color:#000000">,</span> NAN<span style="color:#000000">}}</span><span style="color:#000000">;</span>
+
+  <span style="color:#721045">print_record</span> <span style="color:#000000">(&amp;</span>r1<span style="color:#000000">);</span>    <span style="color:#505050">/* ❶ comment 1 */</span>
+  <span style="color:#721045">print_record</span> <span style="color:#000000">(&amp;</span>r2<span style="color:#000000">);</span>
+
+  <span style="color:#5317ac">return</span> <span style="color:#993399">0</span><span style="color:#000000">;</span>
+<span style="color:#000000">}</span>
+</pre></div>
+
+</div>
+<div class="section" id="Highlighted-syntax-colored-html-and-line-numbers">
+<h3 class="section">3.5 Highlighted syntax colored html and line numbers</h3>
+<div class=note>
+<blockquote>
+<p><b>Note:</b> This section is printed only with the HTML version
+</p><br>
+</blockquote>
+</div>
+
+<!-- Generator: GNU source-highlight 3.1.9
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<div class="example"><pre class="example"><span style="color:#000000">01:</span> <span style="color:#a0132f">#include</span> <span style="color:#2544bb">&lt;stdio.h&gt;</span>
+<span style="color:#000000">02:</span> <span style="color:#a0132f">#include</span> <span style="color:#2544bb">&lt;math.h&gt;</span>               <span style="color:#505050">/* NAN, isnan, nan */</span>
+<span style="color:#000000">03:</span> 
+<span style="color:#000000">04:</span> <span style="color:#5317ac">typedef</span> <span style="color:#5317ac">struct</span> <span style="color:#005a5f">record_s</span> <span style="color:#000000">{</span>
+<span style="color:#000000">05:</span>     <span style="color:#005a5f">char</span> <span style="color:#000000">*</span>name<span style="color:#000000">;</span>
+<span style="color:#000000">06:</span>     <span style="color:#005a5f">double</span> data<span style="color:#000000">[</span><span style="color:#993399">20</span><span style="color:#000000">];</span>
+<span style="color:#000000">07:</span> <span style="color:#000000">}</span> record_s<span style="color:#000000">;</span>
+<span style="color:#000000">08:</span> 
+<span style="color:#000000">09:</span> <span style="color:#5317ac">static</span> <span style="color:#005a5f">void</span>
+<span style="color:#000000">10:</span> <span style="color:#721045">print_record</span> <span style="color:#000000">(</span>record_s <span style="color:#000000">*</span>r<span style="color:#000000">)</span>
+<span style="color:#000000">11:</span> <span style="color:#000000">{</span>
+<span style="color:#000000">12:</span>   <span style="color:#721045">printf</span> <span style="color:#000000">(</span><span style="color:#2544bb">"The name is: %s</span><span style="color:#CC33CC">\n</span><span style="color:#2544bb">  "</span><span style="color:#000000">,</span> r<span style="color:#000000">-&gt;</span>name<span style="color:#000000">);</span>
+<span style="color:#000000">13:</span>   <span style="color:#5317ac">for</span> <span style="color:#000000">(</span>size_t i<span style="color:#000000">=</span><span style="color:#993399">0</span><span style="color:#000000">;</span> <span style="color:#000000">!</span><span style="color:#721045">isnan</span> <span style="color:#000000">(</span>r<span style="color:#000000">-&gt;</span>data<span style="color:#000000">[</span>i<span style="color:#000000">]);</span> i<span style="color:#000000">++)</span> <span style="color:#721045">printf</span> <span style="color:#000000">(</span><span style="color:#2544bb">"%g  "</span><span style="color:#000000">,</span> r<span style="color:#000000">-&gt;</span>data<span style="color:#000000">[</span>i<span style="color:#000000">]);</span>
+<span style="color:#000000">14:</span>   <span style="color:#721045">printf</span> <span style="color:#000000">(</span><span style="color:#2544bb">"</span><span style="color:#CC33CC">\n</span><span style="color:#2544bb">"</span><span style="color:#000000">);</span>
+<span style="color:#000000">15:</span> <span style="color:#000000">}</span>
+<span style="color:#000000">16:</span> 
+<span style="color:#000000">17:</span> <span style="color:#005a5f">int</span>
+<span style="color:#000000">18:</span> <span style="color:#721045">main</span> <span style="color:#000000">(</span><span style="color:#005a5f">int</span> argc<span style="color:#000000">,</span> <span style="color:#005a5f">char</span> <span style="color:#000000">*</span>argv<span style="color:#000000">[])</span>
+<span style="color:#000000">19:</span> <span style="color:#000000">{</span>
+<span style="color:#000000">20:</span> 
+<span style="color:#000000">21:</span>   record_s r1 <span style="color:#000000">=</span> <span style="color:#000000">(</span>record_s<span style="color:#000000">)</span><span style="color:#000000">{</span><span style="color:#000000">.</span>name<span style="color:#000000">=</span><span style="color:#2544bb">"Paul"</span><span style="color:#000000">,</span> <span style="color:#000000">.</span>data<span style="color:#000000">=</span><span style="color:#000000">{</span><span style="color:#993399">1</span><span style="color:#000000">,</span> <span style="color:#993399">2</span><span style="color:#000000">,</span> <span style="color:#993399">3</span><span style="color:#000000">,</span> NAN<span style="color:#000000">}}</span><span style="color:#000000">;</span>
+<span style="color:#000000">22:</span>   record_s r2 <span style="color:#000000">=</span> <span style="color:#000000">(</span>record_s<span style="color:#000000">)</span><span style="color:#000000">{</span><span style="color:#000000">.</span>name<span style="color:#000000">=</span><span style="color:#2544bb">"John"</span><span style="color:#000000">,</span> <span style="color:#000000">.</span>data<span style="color:#000000">=</span><span style="color:#000000">{</span><span style="color:#993399">4.1</span><span style="color:#000000">,</span> <span style="color:#993399">5</span><span style="color:#000000">,</span> <span style="color:#993399">6</span><span style="color:#000000">,</span> <span style="color:#993399">7.2</span><span style="color:#000000">,</span> NAN<span style="color:#000000">}}</span><span style="color:#000000">;</span>
+<span style="color:#000000">23:</span> 
+<span style="color:#000000">24:</span>   <span style="color:#721045">print_record</span> <span style="color:#000000">(&amp;</span>r1<span style="color:#000000">);</span>    <span style="color:#505050">/* ❶ comment 1 */</span>
+<span style="color:#000000">25:</span>   <span style="color:#721045">print_record</span> <span style="color:#000000">(&amp;</span>r2<span style="color:#000000">);</span>
+<span style="color:#000000">26:</span> 
+<span style="color:#000000">27:</span>   <span style="color:#5317ac">return</span> <span style="color:#993399">0</span><span style="color:#000000">;</span>
+<span style="color:#000000">28:</span> <span style="color:#000000">}</span>
+<span style="color:#000000">29:</span> </pre></div>
+
+
+<hr>
+</div>
+</div>
+<div class="appendix" id="Version-History">
+<div class="header">
+<p>
+Next: <a href="#GNU-Free-Documentation-License" accesskey="n" rel="next">GNU Free Documentation License</a>, Previous: <a href="#Code-syntax-highlighting" accesskey="p" rel="prev">Code syntax highlighting</a>, Up: <a href="#Top" accesskey="u" rel="up">Application manual</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Style-Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Version-History-1"></span><h2 class="appendix">Appendix A Version History</h2>
+
+<dl compact="compact">
+<dt><span><em>Version x.x.x, Month date, years</em></span></dt>
+<dd><ul>
+<li> Change xxxx
+</li></ul>
+
+</dd>
+<dt><span><em>Version 1.0.0, September 26, 2022</em></span></dt>
+<dd><ul>
+<li> Initial release of the style sheet for HTML documents generated with
+the <code>makeinfo</code> command from GNU Texinfo 6.8
+</li></ul>
+</dd>
+</dl>
+
+
+
+<hr>
+</div>
+<div class="appendix" id="GNU-Free-Documentation-License">
+<div class="header">
+<p>
+Next: <a href="#Style-Index" accesskey="n" rel="next">Style Index</a>, Previous: <a href="#Version-History" accesskey="p" rel="prev">Version History</a>, Up: <a href="#Top" accesskey="u" rel="up">Application manual</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Style-Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="GNU-Free-Documentation-License-1"></span><h2 class="appendix">Appendix B GNU Free Documentation License</h2>
+<div align="center">Version 1.3, 3 November 2008
+</div>
+
+<div class="display">
+<pre class="display">Copyright &copy; 2000, 2001, 2002, 2007, 2008 Free Software Foundation, Inc.
+<a href="http://fsf.org/">http://fsf.org/</a>
+
+Everyone is permitted to copy and distribute verbatim copies
+of this license document, but changing it is not allowed.
+</pre></div>
+
+<ol start="0">
+<li> PREAMBLE
+
+<p>The purpose of this License is to make a manual, textbook, or other
+functional and useful document <em>free</em> in the sense of freedom: to
+assure everyone the effective freedom to copy and redistribute it,
+with or without modifying it, either commercially or noncommercially.
+Secondarily, this License preserves for the author and publisher a way
+to get credit for their work, while not being considered responsible
+for modifications made by others.
+</p>
+<p>This License is a kind of &ldquo;copyleft&rdquo;, which means that derivative
+works of the document must themselves be free in the same sense.  It
+complements the GNU General Public License, which is a copyleft
+license designed for free software.
+</p>
+<p>We have designed this License in order to use it for manuals for free
+software, because free software needs free documentation: a free
+program should come with manuals providing the same freedoms that the
+software does.  But this License is not limited to software manuals;
+it can be used for any textual work, regardless of subject matter or
+whether it is published as a printed book.  We recommend this License
+principally for works whose purpose is instruction or reference.
+</p>
+</li><li> APPLICABILITY AND DEFINITIONS
+
+<p>This License applies to any manual or other work, in any medium, that
+contains a notice placed by the copyright holder saying it can be
+distributed under the terms of this License.  Such a notice grants a
+world-wide, royalty-free license, unlimited in duration, to use that
+work under the conditions stated herein.  The &ldquo;Document&rdquo;, below,
+refers to any such manual or work.  Any member of the public is a
+licensee, and is addressed as &ldquo;you&rdquo;.  You accept the license if you
+copy, modify or distribute the work in a way requiring permission
+under copyright law.
+</p>
+<p>A &ldquo;Modified Version&rdquo; of the Document means any work containing the
+Document or a portion of it, either copied verbatim, or with
+modifications and/or translated into another language.
+</p>
+<p>A &ldquo;Secondary Section&rdquo; is a named appendix or a front-matter section
+of the Document that deals exclusively with the relationship of the
+publishers or authors of the Document to the Document&rsquo;s overall
+subject (or to related matters) and contains nothing that could fall
+directly within that overall subject.  (Thus, if the Document is in
+part a textbook of mathematics, a Secondary Section may not explain
+any mathematics.)  The relationship could be a matter of historical
+connection with the subject or with related matters, or of legal,
+commercial, philosophical, ethical or political position regarding
+them.
+</p>
+<p>The &ldquo;Invariant Sections&rdquo; are certain Secondary Sections whose titles
+are designated, as being those of Invariant Sections, in the notice
+that says that the Document is released under this License.  If a
+section does not fit the above definition of Secondary then it is not
+allowed to be designated as Invariant.  The Document may contain zero
+Invariant Sections.  If the Document does not identify any Invariant
+Sections then there are none.
+</p>
+<p>The &ldquo;Cover Texts&rdquo; are certain short passages of text that are listed,
+as Front-Cover Texts or Back-Cover Texts, in the notice that says that
+the Document is released under this License.  A Front-Cover Text may
+be at most 5 words, and a Back-Cover Text may be at most 25 words.
+</p>
+<p>A &ldquo;Transparent&rdquo; copy of the Document means a machine-readable copy,
+represented in a format whose specification is available to the
+general public, that is suitable for revising the document
+straightforwardly with generic text editors or (for images composed of
+pixels) generic paint programs or (for drawings) some widely available
+drawing editor, and that is suitable for input to text formatters or
+for automatic translation to a variety of formats suitable for input
+to text formatters.  A copy made in an otherwise Transparent file
+format whose markup, or absence of markup, has been arranged to thwart
+or discourage subsequent modification by readers is not Transparent.
+An image format is not Transparent if used for any substantial amount
+of text.  A copy that is not &ldquo;Transparent&rdquo; is called &ldquo;Opaque&rdquo;.
+</p>
+<p>Examples of suitable formats for Transparent copies include plain
+ASCII without markup, Texinfo input format, LaTeX input
+format, SGML or XML using a publicly available
+DTD, and standard-conforming simple HTML,
+PostScript or PDF designed for human modification.  Examples
+of transparent image formats include PNG, XCF and
+JPG.  Opaque formats include proprietary formats that can be
+read and edited only by proprietary word processors, SGML or
+XML for which the DTD and/or processing tools are
+not generally available, and the machine-generated HTML,
+PostScript or PDF produced by some word processors for
+output purposes only.
+</p>
+<p>The &ldquo;Title Page&rdquo; means, for a printed book, the title page itself,
+plus such following pages as are needed to hold, legibly, the material
+this License requires to appear in the title page.  For works in
+formats which do not have any title page as such, &ldquo;Title Page&rdquo; means
+the text near the most prominent appearance of the work&rsquo;s title,
+preceding the beginning of the body of the text.
+</p>
+<p>The &ldquo;publisher&rdquo; means any person or entity that distributes copies
+of the Document to the public.
+</p>
+<p>A section &ldquo;Entitled XYZ&rdquo; means a named subunit of the Document whose
+title either is precisely XYZ or contains XYZ in parentheses following
+text that translates XYZ in another language.  (Here XYZ stands for a
+specific section name mentioned below, such as &ldquo;Acknowledgements&rdquo;,
+&ldquo;Dedications&rdquo;, &ldquo;Endorsements&rdquo;, or &ldquo;History&rdquo;.)  To &ldquo;Preserve the Title&rdquo;
+of such a section when you modify the Document means that it remains a
+section &ldquo;Entitled XYZ&rdquo; according to this definition.
+</p>
+<p>The Document may include Warranty Disclaimers next to the notice which
+states that this License applies to the Document.  These Warranty
+Disclaimers are considered to be included by reference in this
+License, but only as regards disclaiming warranties: any other
+implication that these Warranty Disclaimers may have is void and has
+no effect on the meaning of this License.
+</p>
+</li><li> VERBATIM COPYING
+
+<p>You may copy and distribute the Document in any medium, either
+commercially or noncommercially, provided that this License, the
+copyright notices, and the license notice saying this License applies
+to the Document are reproduced in all copies, and that you add no other
+conditions whatsoever to those of this License.  You may not use
+technical measures to obstruct or control the reading or further
+copying of the copies you make or distribute.  However, you may accept
+compensation in exchange for copies.  If you distribute a large enough
+number of copies you must also follow the conditions in section 3.
+</p>
+<p>You may also lend copies, under the same conditions stated above, and
+you may publicly display copies.
+</p>
+</li><li> COPYING IN QUANTITY
+
+<p>If you publish printed copies (or copies in media that commonly have
+printed covers) of the Document, numbering more than 100, and the
+Document&rsquo;s license notice requires Cover Texts, you must enclose the
+copies in covers that carry, clearly and legibly, all these Cover
+Texts: Front-Cover Texts on the front cover, and Back-Cover Texts on
+the back cover.  Both covers must also clearly and legibly identify
+you as the publisher of these copies.  The front cover must present
+the full title with all words of the title equally prominent and
+visible.  You may add other material on the covers in addition.
+Copying with changes limited to the covers, as long as they preserve
+the title of the Document and satisfy these conditions, can be treated
+as verbatim copying in other respects.
+</p>
+<p>If the required texts for either cover are too voluminous to fit
+legibly, you should put the first ones listed (as many as fit
+reasonably) on the actual cover, and continue the rest onto adjacent
+pages.
+</p>
+<p>If you publish or distribute Opaque copies of the Document numbering
+more than 100, you must either include a machine-readable Transparent
+copy along with each Opaque copy, or state in or with each Opaque copy
+a computer-network location from which the general network-using
+public has access to download using public-standard network protocols
+a complete Transparent copy of the Document, free of added material.
+If you use the latter option, you must take reasonably prudent steps,
+when you begin distribution of Opaque copies in quantity, to ensure
+that this Transparent copy will remain thus accessible at the stated
+location until at least one year after the last time you distribute an
+Opaque copy (directly or through your agents or retailers) of that
+edition to the public.
+</p>
+<p>It is requested, but not required, that you contact the authors of the
+Document well before redistributing any large number of copies, to give
+them a chance to provide you with an updated version of the Document.
+</p>
+</li><li> MODIFICATIONS
+
+<p>You may copy and distribute a Modified Version of the Document under
+the conditions of sections 2 and 3 above, provided that you release
+the Modified Version under precisely this License, with the Modified
+Version filling the role of the Document, thus licensing distribution
+and modification of the Modified Version to whoever possesses a copy
+of it.  In addition, you must do these things in the Modified Version:
+</p>
+<ol type="A" start="1">
+<li> Use in the Title Page (and on the covers, if any) a title distinct
+from that of the Document, and from those of previous versions
+(which should, if there were any, be listed in the History section
+of the Document).  You may use the same title as a previous version
+if the original publisher of that version gives permission.
+
+</li><li> List on the Title Page, as authors, one or more persons or entities
+responsible for authorship of the modifications in the Modified
+Version, together with at least five of the principal authors of the
+Document (all of its principal authors, if it has fewer than five),
+unless they release you from this requirement.
+
+</li><li> State on the Title page the name of the publisher of the
+Modified Version, as the publisher.
+
+</li><li> Preserve all the copyright notices of the Document.
+
+</li><li> Add an appropriate copyright notice for your modifications
+adjacent to the other copyright notices.
+
+</li><li> Include, immediately after the copyright notices, a license notice
+giving the public permission to use the Modified Version under the
+terms of this License, in the form shown in the Addendum below.
+
+</li><li> Preserve in that license notice the full lists of Invariant Sections
+and required Cover Texts given in the Document&rsquo;s license notice.
+
+</li><li> Include an unaltered copy of this License.
+
+</li><li> Preserve the section Entitled &ldquo;History&rdquo;, Preserve its Title, and add
+to it an item stating at least the title, year, new authors, and
+publisher of the Modified Version as given on the Title Page.  If
+there is no section Entitled &ldquo;History&rdquo; in the Document, create one
+stating the title, year, authors, and publisher of the Document as
+given on its Title Page, then add an item describing the Modified
+Version as stated in the previous sentence.
+
+</li><li> Preserve the network location, if any, given in the Document for
+public access to a Transparent copy of the Document, and likewise
+the network locations given in the Document for previous versions
+it was based on.  These may be placed in the &ldquo;History&rdquo; section.
+You may omit a network location for a work that was published at
+least four years before the Document itself, or if the original
+publisher of the version it refers to gives permission.
+
+</li><li> For any section Entitled &ldquo;Acknowledgements&rdquo; or &ldquo;Dedications&rdquo;, Preserve
+the Title of the section, and preserve in the section all the
+substance and tone of each of the contributor acknowledgements and/or
+dedications given therein.
+
+</li><li> Preserve all the Invariant Sections of the Document,
+unaltered in their text and in their titles.  Section numbers
+or the equivalent are not considered part of the section titles.
+
+</li><li> Delete any section Entitled &ldquo;Endorsements&rdquo;.  Such a section
+may not be included in the Modified Version.
+
+</li><li> Do not retitle any existing section to be Entitled &ldquo;Endorsements&rdquo; or
+to conflict in title with any Invariant Section.
+
+</li><li> Preserve any Warranty Disclaimers.
+</li></ol>
+
+<p>If the Modified Version includes new front-matter sections or
+appendices that qualify as Secondary Sections and contain no material
+copied from the Document, you may at your option designate some or all
+of these sections as invariant.  To do this, add their titles to the
+list of Invariant Sections in the Modified Version&rsquo;s license notice.
+These titles must be distinct from any other section titles.
+</p>
+<p>You may add a section Entitled &ldquo;Endorsements&rdquo;, provided it contains
+nothing but endorsements of your Modified Version by various
+parties&mdash;for example, statements of peer review or that the text has
+been approved by an organization as the authoritative definition of a
+standard.
+</p>
+<p>You may add a passage of up to five words as a Front-Cover Text, and a
+passage of up to 25 words as a Back-Cover Text, to the end of the list
+of Cover Texts in the Modified Version.  Only one passage of
+Front-Cover Text and one of Back-Cover Text may be added by (or
+through arrangements made by) any one entity.  If the Document already
+includes a cover text for the same cover, previously added by you or
+by arrangement made by the same entity you are acting on behalf of,
+you may not add another; but you may replace the old one, on explicit
+permission from the previous publisher that added the old one.
+</p>
+<p>The author(s) and publisher(s) of the Document do not by this License
+give permission to use their names for publicity for or to assert or
+imply endorsement of any Modified Version.
+</p>
+</li><li> COMBINING DOCUMENTS
+
+<p>You may combine the Document with other documents released under this
+License, under the terms defined in section 4 above for modified
+versions, provided that you include in the combination all of the
+Invariant Sections of all of the original documents, unmodified, and
+list them all as Invariant Sections of your combined work in its
+license notice, and that you preserve all their Warranty Disclaimers.
+</p>
+<p>The combined work need only contain one copy of this License, and
+multiple identical Invariant Sections may be replaced with a single
+copy.  If there are multiple Invariant Sections with the same name but
+different contents, make the title of each such section unique by
+adding at the end of it, in parentheses, the name of the original
+author or publisher of that section if known, or else a unique number.
+Make the same adjustment to the section titles in the list of
+Invariant Sections in the license notice of the combined work.
+</p>
+<p>In the combination, you must combine any sections Entitled &ldquo;History&rdquo;
+in the various original documents, forming one section Entitled
+&ldquo;History&rdquo;; likewise combine any sections Entitled &ldquo;Acknowledgements&rdquo;,
+and any sections Entitled &ldquo;Dedications&rdquo;.  You must delete all
+sections Entitled &ldquo;Endorsements.&rdquo;
+</p>
+</li><li> COLLECTIONS OF DOCUMENTS
+
+<p>You may make a collection consisting of the Document and other documents
+released under this License, and replace the individual copies of this
+License in the various documents with a single copy that is included in
+the collection, provided that you follow the rules of this License for
+verbatim copying of each of the documents in all other respects.
+</p>
+<p>You may extract a single document from such a collection, and distribute
+it individually under this License, provided you insert a copy of this
+License into the extracted document, and follow this License in all
+other respects regarding verbatim copying of that document.
+</p>
+</li><li> AGGREGATION WITH INDEPENDENT WORKS
+
+<p>A compilation of the Document or its derivatives with other separate
+and independent documents or works, in or on a volume of a storage or
+distribution medium, is called an &ldquo;aggregate&rdquo; if the copyright
+resulting from the compilation is not used to limit the legal rights
+of the compilation&rsquo;s users beyond what the individual works permit.
+When the Document is included in an aggregate, this License does not
+apply to the other works in the aggregate which are not themselves
+derivative works of the Document.
+</p>
+<p>If the Cover Text requirement of section 3 is applicable to these
+copies of the Document, then if the Document is less than one half of
+the entire aggregate, the Document&rsquo;s Cover Texts may be placed on
+covers that bracket the Document within the aggregate, or the
+electronic equivalent of covers if the Document is in electronic form.
+Otherwise they must appear on printed covers that bracket the whole
+aggregate.
+</p>
+</li><li> TRANSLATION
+
+<p>Translation is considered a kind of modification, so you may
+distribute translations of the Document under the terms of section 4.
+Replacing Invariant Sections with translations requires special
+permission from their copyright holders, but you may include
+translations of some or all Invariant Sections in addition to the
+original versions of these Invariant Sections.  You may include a
+translation of this License, and all the license notices in the
+Document, and any Warranty Disclaimers, provided that you also include
+the original English version of this License and the original versions
+of those notices and disclaimers.  In case of a disagreement between
+the translation and the original version of this License or a notice
+or disclaimer, the original version will prevail.
+</p>
+<p>If a section in the Document is Entitled &ldquo;Acknowledgements&rdquo;,
+&ldquo;Dedications&rdquo;, or &ldquo;History&rdquo;, the requirement (section 4) to Preserve
+its Title (section 1) will typically require changing the actual
+title.
+</p>
+</li><li> TERMINATION
+
+<p>You may not copy, modify, sublicense, or distribute the Document
+except as expressly provided under this License.  Any attempt
+otherwise to copy, modify, sublicense, or distribute it is void, and
+will automatically terminate your rights under this License.
+</p>
+<p>However, if you cease all violation of this License, then your license
+from a particular copyright holder is reinstated (a) provisionally,
+unless and until the copyright holder explicitly and finally
+terminates your license, and (b) permanently, if the copyright holder
+fails to notify you of the violation by some reasonable means prior to
+60 days after the cessation.
+</p>
+<p>Moreover, your license from a particular copyright holder is
+reinstated permanently if the copyright holder notifies you of the
+violation by some reasonable means, this is the first time you have
+received notice of violation of this License (for any work) from that
+copyright holder, and you cure the violation prior to 30 days after
+your receipt of the notice.
+</p>
+<p>Termination of your rights under this section does not terminate the
+licenses of parties who have received copies or rights from you under
+this License.  If your rights have been terminated and not permanently
+reinstated, receipt of a copy of some or all of the same material does
+not give you any rights to use it.
+</p>
+</li><li> FUTURE REVISIONS OF THIS LICENSE
+
+<p>The Free Software Foundation may publish new, revised versions
+of the GNU Free Documentation License from time to time.  Such new
+versions will be similar in spirit to the present version, but may
+differ in detail to address new problems or concerns.  See
+<a href="http://www.gnu.org/copyleft/">http://www.gnu.org/copyleft/</a>.
+</p>
+<p>Each version of the License is given a distinguishing version number.
+If the Document specifies that a particular numbered version of this
+License &ldquo;or any later version&rdquo; applies to it, you have the option of
+following the terms and conditions either of that specified version or
+of any later version that has been published (not as a draft) by the
+Free Software Foundation.  If the Document does not specify a version
+number of this License, you may choose any version ever published (not
+as a draft) by the Free Software Foundation.  If the Document
+specifies that a proxy can decide which future versions of this
+License can be used, that proxy&rsquo;s public statement of acceptance of a
+version permanently authorizes you to choose that version for the
+Document.
+</p>
+</li><li> RELICENSING
+
+<p>&ldquo;Massive Multiauthor Collaboration Site&rdquo; (or &ldquo;MMC Site&rdquo;) means any
+World Wide Web server that publishes copyrightable works and also
+provides prominent facilities for anybody to edit those works.  A
+public wiki that anybody can edit is an example of such a server.  A
+&ldquo;Massive Multiauthor Collaboration&rdquo; (or &ldquo;MMC&rdquo;) contained in the
+site means any set of copyrightable works thus published on the MMC
+site.
+</p>
+<p>&ldquo;CC-BY-SA&rdquo; means the Creative Commons Attribution-Share Alike 3.0
+license published by Creative Commons Corporation, a not-for-profit
+corporation with a principal place of business in San Francisco,
+California, as well as future copyleft versions of that license
+published by that same organization.
+</p>
+<p>&ldquo;Incorporate&rdquo; means to publish or republish a Document, in whole or
+in part, as part of another Document.
+</p>
+<p>An MMC is &ldquo;eligible for relicensing&rdquo; if it is licensed under this
+License, and if all works that were first published under this License
+somewhere other than this MMC, and subsequently incorporated in whole
+or in part into the MMC, (1) had no cover texts or invariant sections,
+and (2) were thus incorporated prior to November 1, 2008.
+</p>
+<p>The operator of an MMC Site may republish an MMC contained in the site
+under CC-BY-SA on the same site at any time before August 1, 2009,
+provided the MMC is eligible for relicensing.
+</p>
+</li></ol>
+
+<span id="ADDENDUM_003a-How-to-use-this-License-for-your-documents"></span><h3 class="heading">ADDENDUM: How to use this License for your documents</h3>
+
+<p>To use this License in a document you have written, include a copy of
+the License in the document and put the following copyright and
+license notices just after the title page:
+</p>
+<div class="example">
+<pre class="example">  Copyright (C)  <var>year</var>  <var>your name</var>.
+  Permission is granted to copy, distribute and/or modify this document
+  under the terms of the GNU Free Documentation License, Version 1.3
+  or any later version published by the Free Software Foundation;
+  with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
+  Texts.  A copy of the license is included in the section entitled ``GNU
+  Free Documentation License''.
+</pre></div>
+
+<p>If you have Invariant Sections, Front-Cover Texts and Back-Cover Texts,
+replace the &ldquo;with&hellip;Texts.&rdquo; line with this:
+</p>
+<div class="example">
+<pre class="example">    with the Invariant Sections being <var>list their titles</var>, with
+    the Front-Cover Texts being <var>list</var>, and with the Back-Cover Texts
+    being <var>list</var>.
+</pre></div>
+
+<p>If you have Invariant Sections without Cover Texts, or some other
+combination of the three, merge those two alternatives to suit the
+situation.
+</p>
+<p>If your document contains nontrivial examples of program code, we
+recommend releasing these examples in parallel under your choice of
+free software license, such as the GNU General Public License,
+to permit their use in free software.
+</p>
+
+
+<hr>
+</div>
+<div class="unnumbered" id="Style-Index">
+<div class="header">
+<p>
+Next: <a href="#Data-Type-Index" accesskey="n" rel="next">Data Type Index</a>, Previous: <a href="#GNU-Free-Documentation-License" accesskey="p" rel="prev">GNU Free Documentation License</a>, Up: <a href="#Top" accesskey="u" rel="up">Application manual</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Style-Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Style-Index-1"></span><h2 class="unnumbered">Style Index</h2>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Style-Index_cp_letter-A"><b>A</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-C"><b>C</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-D"><b>D</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-E"><b>E</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-F"><b>F</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-I"><b>I</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-K"><b>K</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-L"><b>L</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-M"><b>M</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-O"><b>O</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-Q"><b>Q</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-S"><b>S</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-T"><b>T</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-U"><b>U</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-V"><b>V</b></a>
+ &nbsp; 
+</td></tr></table>
+<table class="index-cp" border="0">
+<tr><td></td><th align="left">Index Entry</th><td>&nbsp;</td><th align="left"> Section</th></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Style-Index_cp_letter-A">A</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-abbreviation">abbreviation</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-acronym">acronym</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-author">author</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Style-Index_cp_letter-C">C</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-capitalized_002c-small-cap-font">capitalized, small cap font</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-code_002c-example">code, example</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-code_002c-inline">code, inline</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-code_002c-lisp-source">code, lisp source</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-code_002c-verbatim">code, verbatim</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-command-name">command name</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Style-Index_cp_letter-D">D</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-defined-text">defined text</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-definitions">definitions</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-directory-name">directory name</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-display">display</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Style-Index_cp_letter-E">E</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-email">email</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-emphasized-text">emphasized text</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-example-block">example block</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Style-Index_cp_letter-F">F</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-figures">figures</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-file-name">file name</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-footnotes">footnotes</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-formated-block">formated block</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Style-Index_cp_letter-I">I</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-images">images</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-images_002c-inline">images, inline</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-indented-block">indented block</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-information-messages">information messages</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Style-Index_cp_letter-K">K</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-key_002c-keyboard">key, keyboard</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-keyboard-input">keyboard input</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Style-Index_cp_letter-L">L</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-list_002c-enumerated">list, enumerated</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-list_002c-itemized">list, itemized</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-lists">lists</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Style-Index_cp_letter-M">M</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-media_002c-captioned">media, captioned</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Style-Index_cp_letter-O">O</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-option_002c-command">option, command</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Style-Index_cp_letter-Q">Q</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-quotation">quotation</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Style-Index_cp_letter-S">S</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-sample-text">sample text</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-strong-text">strong text</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Style-Index_cp_letter-T">T</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-tables">tables</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Style-Index_cp_letter-U">U</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-URL_002c-unlinked">URL, unlinked</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Style-Index_cp_letter-V">V</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-variable_002c-environment">variable, environment</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-variable_002c-metasyntactic">variable, metasyntactic</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-verbatim">verbatim</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-verbatim_002c-inline">verbatim, inline</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+</table>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Style-Index_cp_letter-A"><b>A</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-C"><b>C</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-D"><b>D</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-E"><b>E</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-F"><b>F</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-I"><b>I</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-K"><b>K</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-L"><b>L</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-M"><b>M</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-O"><b>O</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-Q"><b>Q</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-S"><b>S</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-T"><b>T</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-U"><b>U</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Style-Index_cp_letter-V"><b>V</b></a>
+ &nbsp; 
+</td></tr></table>
+
+
+<hr>
+</div>
+<div class="unnumbered" id="Data-Type-Index">
+<div class="header">
+<p>
+Next: <a href="#Function-Index" accesskey="n" rel="next">Function Index</a>, Previous: <a href="#Style-Index" accesskey="p" rel="prev">Style Index</a>, Up: <a href="#Top" accesskey="u" rel="up">Application manual</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Style-Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Data-Type-Index-1"></span><h2 class="unnumbered">Data Type Index</h2>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Data-Type-Index_tp_letter-S"><b>S</b></a>
+ &nbsp; 
+</td></tr></table>
+<table class="index-tp" border="0">
+<tr><td></td><th align="left">Index Entry</th><td>&nbsp;</td><th align="left"> Section</th></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Data-Type-Index_tp_letter-S">S</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-struct-record_005fs"><code>struct record_s</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+</table>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Data-Type-Index_tp_letter-S"><b>S</b></a>
+ &nbsp; 
+</td></tr></table>
+
+
+<hr>
+</div>
+<div class="unnumbered" id="Function-Index">
+<div class="header">
+<p>
+Previous: <a href="#Data-Type-Index" accesskey="p" rel="prev">Data Type Index</a>, Up: <a href="#Top" accesskey="u" rel="up">Application manual</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Style-Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Function-Index-1"></span><h2 class="unnumbered">Function Index</h2>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Function-Index_fn_letter-P"><b>P</b></a>
+ &nbsp; 
+</td></tr></table>
+<table class="index-fn" border="0">
+<tr><td></td><th align="left">Index Entry</th><td>&nbsp;</td><th align="left"> Section</th></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Function-Index_fn_letter-P">P</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-print_005frecord"><code>print_record</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Elements">Elements</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+</table>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Function-Index_fn_letter-P"><b>P</b></a>
+ &nbsp; 
+</td></tr></table>
+
+
+
+</div>
+</div>
+<div class="footnote">
+<hr>
+<h4 class="footnotes-heading">Footnotes</h4>
+
+<h5><a id="FOOT1" href="#DOCF1">(1)</a></h5>
+<p>In
+condimentum commodo risus</p>
+<h5><a id="FOOT2" href="#DOCF2">(2)</a></h5>
+<p>Maecenas ut porta lacus, vel congue
+ligula.</p>
+</div>
+
+
+
+</body>
+</html>
