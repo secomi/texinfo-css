@@ -658,6 +658,25 @@ generated. Although there is the possibility to only produce the
 @code{texinfo} version.
 @end itemize
 
+@section hightlight source comes with texinfo 6.8
+
+As part of texinfo 6.8, it is also possible to have code highlighted
+with default parameters.
+
+@verbatim
+ @example language
+ ...
+ @end example
+@end verbatim
+
+the compilation can be done with:
+
+@example
+makeinfo --html -D 'HIGHLIGHT_SYNTAX_DEFAULT 1' \
+  --no-split --no-headers \
+  --init-file=/usr/share/texinfo/init/highlight_syntax.pm \
+  manual.texi
+@end example
 
 @section standard code - reference
 This is how the source code would look like by default without the

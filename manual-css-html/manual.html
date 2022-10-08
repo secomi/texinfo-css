@@ -122,10 +122,11 @@ code with syntax highlighting applied in some examples.
     <ul class="no-bullet">
       <li><a id="toc-Pros-_002f-Cons" href="#Pros-_002f-Cons">3.1.1 Pros / Cons</a></li>
     </ul></li>
-    <li><a id="toc-standard-code-_002d-reference" href="#standard-code-_002d-reference">3.2 standard code - reference</a></li>
-    <li><a id="toc-Highlighted-syntax-texinfo-output" href="#Highlighted-syntax-texinfo-output">3.3 Highlighted syntax texinfo output</a></li>
-    <li><a id="toc-Highlighted-syntax-colored-html" href="#Highlighted-syntax-colored-html">3.4 Highlighted syntax colored html</a></li>
-    <li><a id="toc-Highlighted-syntax-colored-html-and-line-numbers" href="#Highlighted-syntax-colored-html-and-line-numbers">3.5 Highlighted syntax colored html and line numbers</a></li>
+    <li><a id="toc-hightlight-source-comes-with-texinfo-6_002e8" href="#hightlight-source-comes-with-texinfo-6_002e8">3.2 hightlight source comes with texinfo 6.8</a></li>
+    <li><a id="toc-standard-code-_002d-reference" href="#standard-code-_002d-reference">3.3 standard code - reference</a></li>
+    <li><a id="toc-Highlighted-syntax-texinfo-output" href="#Highlighted-syntax-texinfo-output">3.4 Highlighted syntax texinfo output</a></li>
+    <li><a id="toc-Highlighted-syntax-colored-html" href="#Highlighted-syntax-colored-html">3.5 Highlighted syntax colored html</a></li>
+    <li><a id="toc-Highlighted-syntax-colored-html-and-line-numbers" href="#Highlighted-syntax-colored-html-and-line-numbers">3.6 Highlighted syntax colored html and line numbers</a></li>
   </ul></li>
   <li><a id="toc-Version-History-1" href="#Version-History">Appendix A Version History</a></li>
   <li><a id="toc-GNU-Free-Documentation-License-1" href="#GNU-Free-Documentation-License">Appendix B GNU Free Documentation License</a></li>
@@ -668,10 +669,11 @@ Next: <a href="#Version-History" accesskey="n" rel="next">Version History</a>, P
 <span id="Code-syntax-highlighting-1"></span><h2 class="chapter">3 Code syntax highlighting</h2>
 <ul class="section-toc">
 <li><a href="#Introduction" accesskey="1">Introduction</a></li>
-<li><a href="#standard-code-_002d-reference" accesskey="2">standard code - reference</a></li>
-<li><a href="#Highlighted-syntax-texinfo-output" accesskey="3">Highlighted syntax texinfo output</a></li>
-<li><a href="#Highlighted-syntax-colored-html" accesskey="4">Highlighted syntax colored html</a></li>
-<li><a href="#Highlighted-syntax-colored-html-and-line-numbers" accesskey="5">Highlighted syntax colored html and line numbers</a></li>
+<li><a href="#hightlight-source-comes-with-texinfo-6_002e8" accesskey="2">hightlight source comes with texinfo 6.8</a></li>
+<li><a href="#standard-code-_002d-reference" accesskey="3">standard code - reference</a></li>
+<li><a href="#Highlighted-syntax-texinfo-output" accesskey="4">Highlighted syntax texinfo output</a></li>
+<li><a href="#Highlighted-syntax-colored-html" accesskey="5">Highlighted syntax colored html</a></li>
+<li><a href="#Highlighted-syntax-colored-html-and-line-numbers" accesskey="6">Highlighted syntax colored html and line numbers</a></li>
 </ul>
 <div class="section" id="Introduction">
 <h3 class="section">3.1 Introduction</h3>
@@ -708,11 +710,30 @@ generated. Although there is the possibility to only produce the
 <code>texinfo</code> version.
 </li></ul>
 
+</div>
+</div>
+<div class="section" id="hightlight-source-comes-with-texinfo-6_002e8">
+<h3 class="section">3.2 hightlight source comes with texinfo 6.8</h3>
+
+<p>As part of texinfo 6.8, it is also possible to have code highlighted
+with default parameters.
+</p>
+<pre class="verbatim"> @example language
+ ...
+ @end example
+</pre>
+<p>the compilation can be done with:
+</p>
+<div class="example">
+<pre class="example">makeinfo --html -D 'HIGHLIGHT_SYNTAX_DEFAULT 1' \
+  --no-split --no-headers \
+  --init-file=/usr/share/texinfo/init/highlight_syntax.pm \
+  manual.texi
+</pre></div>
 
 </div>
-</div>
 <div class="section" id="standard-code-_002d-reference">
-<h3 class="section">3.2 standard code - reference</h3>
+<h3 class="section">3.3 standard code - reference</h3>
 <p>This is how the source code would look like by default without the
 syntax being highlighted:
 </p>
@@ -749,7 +770,7 @@ main (int argc, char *argv[])
 
 </div>
 <div class="section" id="Highlighted-syntax-texinfo-output">
-<h3 class="section">3.3 Highlighted syntax texinfo output</h3>
+<h3 class="section">3.4 Highlighted syntax texinfo output</h3>
 
 <div class=note>
 <blockquote>
@@ -798,7 +819,7 @@ int
 
 </div>
 <div class="section" id="Highlighted-syntax-colored-html">
-<h3 class="section">3.4 Highlighted syntax colored html</h3>
+<h3 class="section">3.5 Highlighted syntax colored html</h3>
 <div class=note>
 <blockquote>
 <p><b>Note:</b> This section is printed only with the HTML version
@@ -842,7 +863,7 @@ http://www.gnu.org/software/src-highlite -->
 
 </div>
 <div class="section" id="Highlighted-syntax-colored-html-and-line-numbers">
-<h3 class="section">3.5 Highlighted syntax colored html and line numbers</h3>
+<h3 class="section">3.6 Highlighted syntax colored html and line numbers</h3>
 <div class=note>
 <blockquote>
 <p><b>Note:</b> This section is printed only with the HTML version
